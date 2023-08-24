@@ -34,6 +34,9 @@ app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 
+MAIL_ADDRESS = os.environ.get("EMAIL_KEY")
+MAIL_APP_PW = os.environ.get("PASSWORD_KEY")
+
 # Configure Flask-Login
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -287,7 +290,6 @@ def search_posts():
     return render_template("search.html", form=form, search_results=search_results, current_user=current_user)
 
 
-
 @app.route("/about")
 def about():
     return render_template("about.html", current_user=current_user)
@@ -296,15 +298,6 @@ def about():
 # @app.route("/contact", methods=["GET", "POST"])
 # def contact():
 #     return render_template("contact.html", current_user=current_user)
-
-# Optional: You can inclue the email sending code from Day 60:
-# DON'T put your email and password here directly! The code will be visible when you upload to Github.
-# Use environment variables instead (Day 35)
-
-# MAIL_ADDRESS = os.environ.get("EMAIL_KEY")
-# MAIL_APP_PW = os.environ.get("PASSWORD_KEY")
-MAIL_ADDRESS = "adebowaleabisolami@gmail.com"
-MAIL_APP_PW = "xdbhwncswovumfbq"
 
 
 @app.route("/contact", methods=["GET", "POST"])
