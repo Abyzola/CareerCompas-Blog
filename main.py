@@ -11,22 +11,7 @@ from sqlalchemy.orm import relationship
 from sqlalchemy import or_
 import os
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm, SearchForm
-# Optional: add contact me email functionality (Day 60)
 import smtplib
-
-
-'''
-Make sure the required packages are installed: 
-Open the Terminal in PyCharm (bottom left). 
-
-On Windows type:
-python -m pip install -r requirements.txt
-
-On MacOS type:
-pip3 install -r requirements.txt
-
-This will install the packages from the requirements.txt for this project.
-'''
 
 
 app = Flask(__name__)
